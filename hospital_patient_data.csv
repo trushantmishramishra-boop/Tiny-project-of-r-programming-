@@ -1,0 +1,21 @@
+Patient_Name,Department,Age,Stay_Days,Treatment_Cost,Satisfaction_Score
+Aarav Shah,Cardiology,45,5,45000.0,4.5
+Diya Patel,General Medicine,32,3,18000.0,4.2
+Rohan Mehta,Orthopedics,58,7,62000.0,4.0
+Ananya Joshi,Pediatrics,12,2,12000.0,4.7
+Kabir Verma,Cardiology,67,6,78000.0,3.8
+Ishita Rao,Dermatology,29,2,15000.0,4.4
+Arjun Desai,General Medicine,41,4,28000.0,4.3
+Meera Nair,Orthopedics,52,8,,4.1
+Vivaan Singh,Pediatrics,8,3,14000.0,4.8
+Riya Kapoor,Cardiology,73,9,92000.0,3.7
+Aditya Jain,Dermatology,35,2,19000.0,4.5
+Kavya Iyer,General Medicine,48,5,36000.0,4.2
+Yash Gupta,Orthopedics,61,6,48000.0,4.0
+Neha Sharma,Cardiology,54,7,68000.0,3.9
+Dev Kumar,Pediatrics,15,3,16000.0,
+Pooja Shah,Dermatology,39,4,24000.0,4.3
+Rahul Patel,General Medicine,46,4,30000.0,4.4
+Sneha Mehta,Orthopedics,57,7,59000.0,4.0
+Kunal Verma,Cardiology,69,8,85000.0,3.8
+Tanya Rao,Pediatrics,10,2,13000.0,4.7

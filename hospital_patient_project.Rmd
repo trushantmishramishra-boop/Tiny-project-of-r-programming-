@@ -1,0 +1,129 @@
+---
+title: "Hospital Patient Analysis"
+author: "Trushant mishra 084"
+date: "10-09-2026"
+output: html_document
+---
+
+# Introduction
+
+This Tiny Project analyzes hospital patient data using a sample dataset containing patient names, departments, ages, hospital stay, treatment cost, and satisfaction scores.
+
+# 1. Data Importing
+
+```{r}
+patient_data <- read.csv("hospital_patient_data.csv")
+patient_data
+```
+
+```{r}
+head(patient_data)
+summary(patient_data)
+str(patient_data)
+```
+
+# 2. Data Preprocessing and Cleaning
+
+## Checking Missing Values
+
+```{r}
+colSums(is.na(patient_data))
+```
+
+## Handling Missing Values
+
+```{r}
+patient_data$Treatment_Cost[is.na(patient_data$Treatment_Cost)] <- median(patient_data$Treatment_Cost, na.rm=TRUE)
+patient_data$Satisfaction_Score[is.na(patient_data$Satisfaction_Score)] <- median(patient_data$Satisfaction_Score, na.rm=TRUE)
+```
+
+# 3. Statistical Analysis
+
+```{r}
+mean(patient_data$Treatment_Cost)
+median(patient_data$Treatment_Cost)
+var(patient_data$Treatment_Cost)
+sd(patient_data$Treatment_Cost)
+min(patient_data$Treatment_Cost)
+max(patient_data$Treatment_Cost)
+```
+
+# 4. Patients by Department
+
+```{r}
+department_count <- table(patient_data$Department)
+department_count
+```
+
+```{r}
+barplot(department_count, main="Number of Patients by Department",
+        xlab="Department", ylab="Number of Patients", las=2)
+```
+
+# 5. Treatment Cost by Patient
+
+```{r}
+barplot(patient_data$Treatment_Cost, names.arg=patient_data$Patient_Name,
+        main="Treatment Cost by Patient", xlab="Patient",
+        ylab="Treatment Cost", las=2, cex.names=0.7)
+```
+
+# 6. Hospital Stay by Patient
+
+```{r}
+barplot(patient_data$Stay_Days, names.arg=patient_data$Patient_Name,
+        main="Hospital Stay by Patient", xlab="Patient",
+        ylab="Stay in Days", las=2, cex.names=0.7)
+```
+
+# 7. Satisfaction Score Distribution
+
+```{r}
+hist(patient_data$Satisfaction_Score, main="Distribution of Satisfaction Scores",
+     xlab="Satisfaction Score", ylab="Frequency")
+```
+
+# 8. Age Distribution
+
+```{r}
+hist(patient_data$Age, main="Distribution of Patient Age",
+     xlab="Age", ylab="Frequency")
+```
+
+# 9. Correlation Analysis
+
+## Stay Days and Treatment Cost
+
+```{r}
+cor(patient_data$Stay_Days, patient_data$Treatment_Cost)
+```
+
+```{r}
+plot(patient_data$Stay_Days, patient_data$Treatment_Cost,
+     main="Hospital Stay vs Treatment Cost",
+     xlab="Hospital Stay (Days)", ylab="Treatment Cost", pch=19)
+```
+
+## Age and Treatment Cost
+
+```{r}
+cor(patient_data$Age, patient_data$Treatment_Cost)
+```
+
+```{r}
+plot(patient_data$Age, patient_data$Treatment_Cost,
+     main="Age vs Treatment Cost",
+     xlab="Age", ylab="Treatment Cost", pch=19)
+```
+
+# 10. Findings
+
+- Patient data was analyzed using age, hospital stay, treatment cost, and satisfaction score.
+- Patients were compared across departments.
+- Treatment costs and hospital stays were represented using bar plots.
+- Age and satisfaction score distributions were examined using histograms.
+- Correlation analysis was used to examine relationships between hospital stay, age, and treatment cost.
+
+# 11. Conclusion
+
+The Hospital Patient Analysis project demonstrates how R can be used to import, clean, analyze, and visualize healthcare-related data using statistical calculations, graphs, and correlation analysis.
